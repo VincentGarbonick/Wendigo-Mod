@@ -28,6 +28,9 @@ public class RegistryHandler
 
     // Items
     public static final RegistryObject<Item> FLESH = ITEMS.register("flesh", ItemBase::new);
+    // Higher tier repair material for flesh gear
+    // Have animation that makes it look around
+    // public static final RegistryObject<Item> AWOKEN_FLESH = ITEMS.register("awoken_flesh", ItemBase::new);
 
     // Tools
     public static final RegistryObject<FlayingBlade> FLAYING_BLADE = ITEMS.register(("flaying_blade"), () ->
