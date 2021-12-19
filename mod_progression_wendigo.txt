@@ -1,24 +1,35 @@
+Current block
+cow engine. cow flesh + string + bucket of milk = cow engine 
+1 bucket of milk + 3 coagulated blood = 1 bucket of blood or 3 glass vials
+cow engine looks around, makes a creepy distorted moo every X number of minutes/seconds 
 Early Game 
 - Flaying blade -> flesh -> flesh armor 
 - glass bottle + bone needle -> hit ---> sucks up blood 
+- no, we have a broken bone + spider eye that makes villager drop coagulated blood on hit
+- can un coagulate blood with a bucket of milk + special device?
 - animal vs villager blood depends on healing 
 
 - blowdart gun that heals villagers to keep farming them (uses tanned flesh)
 
 - blood -> blood healing 
 
-- blood distilling 
+- blood distilling (NO, USE THE COW ENGINE AND YOU CAN EAT COAGULATED BLOOD FOR REGEN + MAX HUNGER)
 
-- flesh drying rack 
+- flesh drying rack (turns all flesh into dried flesh so you can use animals)
 
-- blood pouch (tanned flesh + tendons)
-- ?blood pouch + blood distilling = distilled blood 
 
 - carnivorous plant mob that spawns (blood makes it grow, flesh is what tames it) 
 					(blood + seeds + distilling stand) to make seeds 
 
 - vine whip (carnivorous plant vines) (uses blood pouches to repair) -> projectile 
 - bones  
+- visage of cow 
+
+- for blood de-coagulating- block where you click w/ milk to fill, put in coagulated blood in silo, once you get 4 
+  it consumes everything and fills some kind of a blood meter 
+
+- for blood distilling  
+
 
 Midgame 
 - way to make iron golems inert so you can torment villagers 
@@ -28,10 +39,17 @@ Midgame
 - some kind of way to heal villagers for farming 
 - flesh enriched soil to make things grow quicker 
 - better way to harvest blood 
+- village compass
+- visage of pig 
+- visage of wolf
+- redstone flesh harvester (for redstone engineers)
+- redstone blood drinker (for redstone engineers)
 
 lategame 
 - turn moon red ritual 
 - grasp of the savior (devil daggers hand)
+- blood diamond equipment (diamond equipment with scary aura effect + red pixels (use color modder), CAN ONLY USE WITH 
+- 90+ CORRUPTION 
 
 endgame 
 - hand of god (explosions taht don't hurt blocks, lightning bolts, void out blocks)
@@ -39,4 +57,4 @@ endgame
 misc 
 - self surgery 
 - taking brain out of villager makes it stop moving and talking 
-
+- gore alchemy 

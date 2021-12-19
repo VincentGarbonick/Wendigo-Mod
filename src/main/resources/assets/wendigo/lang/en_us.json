@@ -1,5 +1,6 @@
 {
   "item.wendigo.flesh": "Villager Flesh",
-  "item.wendigo.flaying_blade": "Flaying Blade"
-
+  "item.wendigo.flaying_blade": "Flaying Blade",
+  "item.wendigo.cow_engine" : "Cow Engine",
+  "block.wendigo.cow_engine": "Cow Engine"
 }
