@@ -1,6 +1,9 @@
 {
   "item.wendigo.flesh": "Villager Flesh",
   "item.wendigo.flaying_blade": "Flaying Blade",
+  "item.wendigo.blood_bucket" : "Blood Bucket",
+  "item.wendigo.blood_bottle" : "Blood Bottle",
+  "item.wendigo.coagulated_blood" : "Coagulated Blood",
   "item.wendigo.cow_engine" : "Cow Engine",
   "block.wendigo.cow_engine": "Cow Engine"
 }

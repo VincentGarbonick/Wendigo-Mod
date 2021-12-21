@@ -2,6 +2,7 @@ Current block
 cow engine. cow flesh + string + bucket of milk = cow engine 
 1 bucket of milk + 3 coagulated blood = 1 bucket of blood or 3 glass vials
 cow engine looks around, makes a creepy distorted moo every X number of minutes/seconds 
+
 Early Game 
 - Flaying blade -> flesh -> flesh armor 
 - glass bottle + bone needle -> hit ---> sucks up blood 
@@ -58,3 +59,8 @@ misc
 - self surgery 
 - taking brain out of villager makes it stop moving and talking 
 - gore alchemy 
+
+- living bag that absorbs all seeds 
+- living bag that absorbs all mob drops for you 
+- villager food (hanna already made this :o)
+- adding extra organs?

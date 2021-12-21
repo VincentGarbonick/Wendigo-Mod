@@ -31,8 +31,11 @@ public class RegistryHandler
 
     // Items
     public static final RegistryObject<Item> FLESH = ITEMS.register("flesh", ItemBase::new);
-    // Higher tier repair material for flesh gear
-    // Have animation that makes it look around
+    // TODO: Make coagulated blood edible
+    public static final RegistryObject<Item> COAGULATED_BLOOD = ITEMS.register("coagulated_blood", ItemBase::new);
+    // TODO: Make blood bottle drinkable potion
+    public static final RegistryObject<Item> BLOOD_BUCKET = ITEMS.register("blood_bucket", ItemBase::new);
+    public static final RegistryObject<Item> BLOOD_BOTTLE = ITEMS.register("blood_bottle", ItemBase::new);
     // public static final RegistryObject<Item> AWOKEN_FLESH = ITEMS.register("awoken_flesh", ItemBase::new);
 
     // Tools
