@@ -1,5 +1,6 @@
 package com.ThaddeusHalifax.WendigoMod.blocks;
 
+import com.ThaddeusHalifax.WendigoMod.TileEntity.CowEngineTile;
 import com.ThaddeusHalifax.WendigoMod.util.RegistryHandler;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -8,18 +9,23 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
+
+import javax.annotation.Nullable;
 
 
 public class CowEngine extends Block
@@ -75,12 +81,22 @@ public class CowEngine extends Block
     @Override
     public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit)
     {
+        //TileEntity tileEntity = worldIn.getTileEntity(pos);
 
+        /*
+        TileEntity tileEntity = worldIn.getBlockEntity(pos);
+        System.out.println(tileEntity);
+
+        if(tileEntity instanceof CowEngineTile)
+        {
+            System.out.print("test");
+        }
+        */
         // check item in players hand
         Item playerItem = player.getMainHandItem().getItem();
 
-        if(!worldIn.isClientSide() && handIn.equals(Hand.MAIN_HAND))
-        {
+        if(!worldIn.isClientSide() && handIn.equals(Hand.MAIN_HAND)) {
+            /*
             // for interacting with
             if (playerItem == RegistryHandler.COAGULATED_BLOOD.get() && coagulatedBloodCount < 3) {
                 coagulatedBloodCount++;
@@ -137,7 +153,32 @@ public class CowEngine extends Block
                         milkTruck, coagulatedBloodCount, wetBloodCount);
                 System.out.println(dataString);
             }
+            */
+
+            // https://boson-english.v2mcdev.com/tileentity/first-tileentity-and-data-storage.html
+            CowEngineTile cowEngineTile = (CowEngineTile) worldIn.getBlockEntity(pos);
+            if (playerItem == RegistryHandler.COAGULATED_BLOOD.get())
+            {
+                cowEngineTile.incrementCoagulatedBlood();
+            }
+            else
+            {
+                System.out.println(cowEngineTile.getCoagulatedBloodCount());
+            }
         }
         return super.use(state, worldIn, pos, player, handIn, hit);
+    }
+
+    @Nullable
+    @Override
+    public TileEntity createTileEntity(BlockState state, IBlockReader world)
+    {
+        return RegistryHandler.COW_ENGINE_TILE.get().create();
+    }
+
+    @Override
+    public boolean hasTileEntity(BlockState state)
+    {
+        return true;
     }
 }
