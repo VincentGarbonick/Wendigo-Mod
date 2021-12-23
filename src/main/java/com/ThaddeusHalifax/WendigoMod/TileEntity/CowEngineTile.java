@@ -18,14 +18,6 @@ public class CowEngineTile extends TileEntity {
     protected int coagulatedBloodCount = 0;
     protected int wetBloodCount = 0;
 
-    public void fillMilk()
-    {
-        this.milkTruck = true;
-    }
-    public void emptyMilk()
-    {
-        this.milkTruck = false;
-    }
     public void incrementCoagulatedBlood()
     {
         this.coagulatedBloodCount++;

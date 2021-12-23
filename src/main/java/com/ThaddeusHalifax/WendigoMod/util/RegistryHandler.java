@@ -31,12 +31,13 @@ public class RegistryHandler {
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         TILE_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
-
+    // TODO: Get custom tabs working
     // Items
     public static final RegistryObject<Item> FLESH = ITEMS.register("flesh", ItemBase::new);
     // TODO: Make coagulated blood edible
     public static final RegistryObject<Item> COAGULATED_BLOOD = ITEMS.register("coagulated_blood", ItemBase::new);
     // TODO: Make blood bottle drinkable potion
+    // TODO: Make blood bucket a bucket that doesn't stack lol
     public static final RegistryObject<Item> BLOOD_BUCKET = ITEMS.register("blood_bucket", ItemBase::new);
     public static final RegistryObject<Item> BLOOD_BOTTLE = ITEMS.register("blood_bottle", ItemBase::new);
     // public static final RegistryObject<Item> AWOKEN_FLESH = ITEMS.register("awoken_flesh", ItemBase::new);

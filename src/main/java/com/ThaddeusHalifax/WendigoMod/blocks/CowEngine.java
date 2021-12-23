@@ -24,6 +24,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
 
@@ -81,89 +82,71 @@ public class CowEngine extends Block
     @Override
     public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit)
     {
-        //TileEntity tileEntity = worldIn.getTileEntity(pos);
 
-        /*
-        TileEntity tileEntity = worldIn.getBlockEntity(pos);
-        System.out.println(tileEntity);
-
-        if(tileEntity instanceof CowEngineTile)
-        {
-            System.out.print("test");
-        }
-        */
-        // check item in players hand
+        // https://boson-english.v2mcdev.com/tileentity/first-tileentity-and-data-storage.html
         Item playerItem = player.getMainHandItem().getItem();
 
         if(!worldIn.isClientSide() && handIn.equals(Hand.MAIN_HAND)) {
-            /*
+
+            CowEngineTile cowEngineTile = (CowEngineTile) worldIn.getBlockEntity(pos);
+
             // for interacting with
-            if (playerItem == RegistryHandler.COAGULATED_BLOOD.get() && coagulatedBloodCount < 3) {
-                coagulatedBloodCount++;
+            if (playerItem == RegistryHandler.COAGULATED_BLOOD.get() && cowEngineTile.getCoagulatedBloodCount() < 3) {
+                cowEngineTile.incrementCoagulatedBlood();
                 worldIn.playSound(null, pos, SoundEvents.GENERIC_EAT, SoundCategory.BLOCKS, 1, 1);
 
                 // decrement the item in their hand by one
                 ItemStack playerItemStack = player.getMainHandItem().getStack();
                 playerItemStack.shrink(1);
 
-                if (coagulatedBloodCount == 3 && milkTruck == true)
+                if (cowEngineTile.getCoagulatedBloodCount() == 3 && cowEngineTile.isMilkTruck() == true)
                 {
-                    milkTruck = false;
-                    coagulatedBloodCount = 0;
-                    wetBloodCount = 3;
+                    cowEngineTile.setMilkTruck(false);
+                    cowEngineTile.setCoagulatedBloodCount(0);
+                    cowEngineTile.setWetBloodCount(3);
                 }
             }
-            else if (playerItem == Items.MILK_BUCKET && milkTruck == false)
+            else if (playerItem == Items.MILK_BUCKET && cowEngineTile.isMilkTruck() == false)
             {
-                milkTruck = true;
+                cowEngineTile.setMilkTruck(true);
                 worldIn.playSound(null, pos, SoundEvents.BUCKET_EMPTY, SoundCategory.BLOCKS, 1, 1);
 
                 player.setItemInHand(handIn, new ItemStack(Items.BUCKET, 1));
 
-                if (coagulatedBloodCount == 3)
+                if (cowEngineTile.getCoagulatedBloodCount() == 3)
                 {
-                    milkTruck = false;
-                    coagulatedBloodCount = 0;
-                    wetBloodCount = 3;
+                    cowEngineTile.setMilkTruck(false);
+                    cowEngineTile.setCoagulatedBloodCount(0);
+                    cowEngineTile.setWetBloodCount(3);
                 }
             }
-            else if (playerItem == Items.GLASS_BOTTLE && wetBloodCount > 0)
+            else if (playerItem == Items.GLASS_BOTTLE && cowEngineTile.getWetBloodCount() > 0)
             {
+                worldIn.playSound(null, pos, SoundEvents.WANDERING_TRADER_DRINK_POTION, SoundCategory.BLOCKS, 1, 1);
+
                 //check if inventory and hotbar are full
                 // decrement the item in their hand by one
                 ItemStack playerItemStack = player.getMainHandItem().getStack();
                 playerItemStack.shrink(1);
 
                 playerItemStack = new ItemStack(RegistryHandler.BLOOD_BOTTLE.get(), 1);
-                player.addItem(playerItemStack);
-
-                wetBloodCount--;
+                ItemHandlerHelper.giveItemToPlayer(player,playerItemStack);
+                cowEngineTile.decrementWetBlood();
             }
-            else if (playerItem == Items.BUCKET && wetBloodCount == 3)
+            else if (playerItem == Items.BUCKET && cowEngineTile.getWetBloodCount() == 3)
             {
                 worldIn.playSound(null, pos, SoundEvents.BUCKET_FILL, SoundCategory.BLOCKS, 1, 1);
                 player.setItemInHand(handIn, new ItemStack(RegistryHandler.BLOOD_BUCKET.get(), 1));
 
                 // get rid of all the wet blood
-                wetBloodCount -= 3;
+                cowEngineTile.setWetBloodCount(0);
             }
             else if(playerItem == Items.STICK)
             {
                 String dataString = String.format("\nMilktruck is: %b\ncoagBlood is: %d\nwetBlood is: %d\n==========",
-                        milkTruck, coagulatedBloodCount, wetBloodCount);
+                        cowEngineTile.isMilkTruck(),
+                        cowEngineTile.getCoagulatedBloodCount(), cowEngineTile.getWetBloodCount());
                 System.out.println(dataString);
-            }
-            */
-
-            // https://boson-english.v2mcdev.com/tileentity/first-tileentity-and-data-storage.html
-            CowEngineTile cowEngineTile = (CowEngineTile) worldIn.getBlockEntity(pos);
-            if (playerItem == RegistryHandler.COAGULATED_BLOOD.get())
-            {
-                cowEngineTile.incrementCoagulatedBlood();
-            }
-            else
-            {
-                System.out.println(cowEngineTile.getCoagulatedBloodCount());
             }
         }
         return super.use(state, worldIn, pos, player, handIn, hit);
