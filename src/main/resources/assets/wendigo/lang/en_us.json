@@ -5,5 +5,7 @@
   "item.wendigo.blood_bottle" : "Blood Bottle",
   "item.wendigo.coagulated_blood" : "Coagulated Blood",
   "item.wendigo.cow_engine" : "Cow Engine",
-  "block.wendigo.cow_engine": "Cow Engine"
+  "block.wendigo.cow_engine": "Cow Engine",
+  "item.wendigo.flesh_altar" : "Flesh Altar",
+  "block.wendigo.flesh_altar": "Flesh Altar"
 }

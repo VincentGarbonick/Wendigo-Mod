@@ -31,6 +31,7 @@ Early Game
 
 - for blood distilling  
 
+- vat growing basic animals 
 
 Midgame 
 - way to make iron golems inert so you can torment villagers 
@@ -51,7 +52,7 @@ lategame
 - grasp of the savior (devil daggers hand)
 - blood diamond equipment (diamond equipment with scary aura effect + red pixels (use color modder), CAN ONLY USE WITH 
 - 90+ CORRUPTION 
-
+- addon to make becons feed you with block of flesh lol
 endgame 
 - hand of god (explosions taht don't hurt blocks, lightning bolts, void out blocks)
 
@@ -64,3 +65,22 @@ misc
 - living bag that absorbs all mob drops for you 
 - villager food (hanna already made this :o)
 - adding extra organs?
+
+- blood fountain of some sort 
+- flesh wallpaper/tapistry 
+
+- you can summon some sort of wendigo that can trade with you 
+- some kind of corrupted enchanting system 
+
+-https://www.reddit.com/r/feedthebeast/comments/rm9oof/looking_for_an_apocalypse_mod/ 
+ICE APOCALYPSE (can also make a standalone mod) (permafrost)
+
+yields based on moon phase 
+visages move around and look around 
+
+
+consider removing the flesh scultpor tbh 
+
+ideas for flesh altar 
+- multiblock? 
+- slot for "phase modifier"- basically it interacts with the moon phase effects 

@@ -1,8 +1,10 @@
 package com.ThaddeusHalifax.WendigoMod.util;
 
 import com.ThaddeusHalifax.WendigoMod.TileEntity.CowEngineTile;
+import com.ThaddeusHalifax.WendigoMod.TileEntity.FleshAltarTile;
 import com.ThaddeusHalifax.WendigoMod.Wendigo;
 import com.ThaddeusHalifax.WendigoMod.blocks.CowEngine;
+import com.ThaddeusHalifax.WendigoMod.blocks.FleshAltar;
 import com.ThaddeusHalifax.WendigoMod.items.ItemBase;
 import com.ThaddeusHalifax.WendigoMod.tools.FlayersTools;
 import com.ThaddeusHalifax.WendigoMod.tools.FlayingBlade;
@@ -10,6 +12,7 @@ import javafx.scene.control.Tab;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SwordItem;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -48,14 +51,18 @@ public class RegistryHandler {
 
     // Block
     public static final RegistryObject<Block> COW_ENGINE = BLOCKS.register(("cow_engine"), CowEngine::new);
+    public static final RegistryObject<Block> FLESH_ALTAR = BLOCKS.register(("flesh_altar"), FleshAltar::new);
 
     // Block Items
     public static final RegistryObject<Item> COW_ENGINE_ITEM = ITEMS.register("cow_engine", () -> new BlockItemBase(COW_ENGINE.get()));
+    public static final RegistryObject<Item> FLESH_ALTAR_ITEM = ITEMS.register("flesh_altar", () -> new BlockItemBase(FLESH_ALTAR.get()));
 
     // Tile Entities
     public static RegistryObject<TileEntityType<CowEngineTile>> COW_ENGINE_TILE = TILE_ENTITIES.register("cow_engine_tile", () -> TileEntityType.Builder.of(
             ()->new CowEngineTile(RegistryHandler.COW_ENGINE_TILE.get()), RegistryHandler.COW_ENGINE.get()).build(null));
 
+    public static RegistryObject<TileEntityType<FleshAltarTile>> FLESH_ALTAR_TILE = TILE_ENTITIES.register("flesh_altar_tile", () -> TileEntityType.Builder.of(
+            ()->new FleshAltarTile(RegistryHandler.FLESH_ALTAR_TILE.get()), RegistryHandler.FLESH_ALTAR.get()).build(null));
     // https://chocobo.cosiestdevil.uk/minecraft/MetalsAndSouls/src/branch/1.16.x/src/main/java/uk/tldcode/minecraft/metalsandsouls/tileentities/ModTileEntities.java
     // public final  RegistryObject<TileEntityType<InfuserTileEntity>> INFUSER = MetalsMod.TILE_ENTITIES.register("infuser", () -> TileEntityType.Builder.create(
     // () -> new InfuserTileEntity(TechTier.beginner), MetalsMod.ModBlocks.INFUSER.get()).build(null));
