@@ -1,12 +1,16 @@
 package com.ThaddeusHalifax.WendigoMod;
 
+import com.ThaddeusHalifax.WendigoMod.blocks.FleshAltar;
+import com.ThaddeusHalifax.WendigoMod.screens.FleshAltarScreen;
 import com.ThaddeusHalifax.WendigoMod.util.RegistryHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModContainer;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -47,7 +51,6 @@ public class Wendigo
 
     private void doClientStuff(final FMLClientSetupEvent event)
     {
-
-
+        ScreenManager.register(RegistryHandler.FLESH_ALTAR_CONTAINER.get(), FleshAltarScreen::new);
     }
 }
